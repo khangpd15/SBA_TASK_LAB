@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { LogIn, AlertCircle, ShieldCheck, KeyRound, User } from 'lucide-react';
 import logoSvg from '../assets/logo.svg';
+import { StorageService } from '../services/storageService';
 
 export default function LoginView({ onLoginSuccess }) {
   const [username, setUsername] = useState('');
@@ -27,29 +28,14 @@ export default function LoginView({ onLoginSuccess }) {
       return;
     }
 
-    if (trimmedUser === 'Admin' && trimmedPass === 'Admin') {
-      setErrorMsg('');
-      onLoginSuccess({
-        id: 1,
-        username: 'Admin',
-        fullName: 'Quản trị viên Hệ thống',
-        role: 1
-      });
+    const { user, error } = StorageService.authenticate(trimmedUser, trimmedPass);
+    if (error) {
+      setErrorMsg(error);
       return;
     }
 
-    if (trimmedUser === 'Staff' && trimmedPass === 'Staff') {
-      setErrorMsg('');
-      onLoginSuccess({
-        id: 2,
-        username: 'Staff',
-        fullName: 'Nguyễn Văn Biên Tập',
-        role: 2
-      });
-      return;
-    }
-
-    setErrorMsg("Tên đăng nhập hoặc mật khẩu không chính xác! (Gợi ý: Admin / Admin)");
+    setErrorMsg('');
+    onLoginSuccess(user);
   };
 
   const handleFillCredentials = (u, p) => {

@@ -4,6 +4,7 @@ import {
   Plus, 
   Search, 
   Edit, 
+  Eye,
   Trash2, 
   Newspaper, 
   X,
@@ -14,6 +15,7 @@ import {
 import NewsModal from '../components/forms/NewsModal';
 import ConfirmDialog from '../components/common/ConfirmDialog';
 import EmptyState from '../components/common/EmptyState';
+import DetailModal from '../components/common/DetailModal';
 
 export default function NewsView({
   news = [],
@@ -32,6 +34,11 @@ export default function NewsView({
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalMode, setModalMode] = useState('create');
   const [selectedNews, setSelectedNews] = useState(null);
+  const [detailNewsId, setDetailNewsId] = useState(null);
+  const detailNews = news.find(item => item.id === detailNewsId);
+  const detailCategory = detailNews
+    ? categories.find(cat => cat.id === detailNews.categoryId)
+    : null;
 
   // Delete dialog state
   const [isConfirmOpen, setIsConfirmOpen] = useState(false);
@@ -209,7 +216,7 @@ export default function NewsView({
                   <th style={{ width: '130px' }}>Tác giả</th>
                   <th style={{ width: '180px' }}>Tags</th>
                   <th style={{ width: '120px' }}>Trạng thái</th>
-                  <th style={{ width: '110px' }} className="text-end pe-4">Thao tác</th>
+                  <th style={{ minWidth: '150px' }} className="text-end pe-4">Thao tác</th>
                 </tr>
               </thead>
               <tbody>
@@ -271,6 +278,15 @@ export default function NewsView({
                         <div className="btn-group btn-group-sm">
                           <button
                             type="button"
+                            className="btn btn-outline-primary"
+                            onClick={() => setDetailNewsId(item.id)}
+                            title="Xem chi tiết bài viết"
+                            aria-label={`Xem chi tiết bài viết ${item.title}`}
+                          >
+                            <Eye size={14} />
+                          </button>
+                          <button
+                            type="button"
                             className="btn btn-outline-secondary"
                             onClick={() => handleOpenEdit(item)}
                             title="Chỉnh sửa bài viết"
@@ -297,6 +313,30 @@ export default function NewsView({
       </div>
 
       {/* Modals */}
+      {detailNews && (
+        <DetailModal
+          title="Chi tiết bài viết"
+          subtitle={`Bài viết #${detailNews.id}`}
+          onClose={() => setDetailNewsId(null)}
+          fields={[
+            { label: 'ID', value: `#${detailNews.id}` },
+            { label: 'Tiêu đề', value: detailNews.title },
+            { label: 'Danh mục', value: detailCategory?.name || `Danh mục #${detailNews.categoryId} (không còn tồn tại)` },
+            { label: 'Tác giả', value: detailNews.createdBy },
+            { label: 'Ngày tạo', value: detailNews.createdAt },
+            { label: 'Trạng thái', value: detailNews.status === 1 ? 'Công khai' : 'Bản nháp / Tạm ẩn' },
+            { label: 'Tags', value: Array.isArray(detailNews.tags) && detailNews.tags.length > 0 ? detailNews.tags.join(', ') : '—' }
+          ]}
+        >
+          <section className="border-top pt-3 mt-3">
+            <h6 className="fw-bold">Nội dung đầy đủ</h6>
+            <p className="mb-0 text-break" style={{ whiteSpace: 'pre-wrap' }}>
+              {detailNews.content || '—'}
+            </p>
+          </section>
+        </DetailModal>
+      )}
+
       <NewsModal
         isOpen={isModalOpen}
         mode={modalMode}

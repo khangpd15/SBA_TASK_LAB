@@ -2,7 +2,7 @@
 import React, { useEffect } from 'react';
 import { X } from 'lucide-react';
 
-export default function Modal({ isOpen, onClose, title, subtitle, icon, children }) {
+export default function Modal({ isOpen, onClose, title, subtitle, icon, children, scrollable = false }) {
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (e.key === 'Escape' && isOpen) {
@@ -30,7 +30,7 @@ export default function Modal({ isOpen, onClose, title, subtitle, icon, children
       onClick={onClose}
     >
       <div 
-        className="modal-dialog modal-dialog-centered modal-lg" 
+        className={`modal-dialog modal-dialog-centered modal-lg${scrollable ? ' modal-dialog-scrollable' : ''}`}
         onClick={(e) => e.stopPropagation()}
       >
         <div className="modal-content shadow-lg border-0 rounded-3">

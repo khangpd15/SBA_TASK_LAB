@@ -4,6 +4,7 @@ import {
   FolderPlus, 
   Search, 
   Edit, 
+  Eye,
   Trash2, 
   FolderTree, 
   X,
@@ -12,6 +13,7 @@ import {
 import CategoryModal from '../components/forms/CategoryModal';
 import ConfirmDialog from '../components/common/ConfirmDialog';
 import EmptyState from '../components/common/EmptyState';
+import DetailModal from '../components/common/DetailModal';
 
 export default function CategoryView({
   categories = [],
@@ -26,6 +28,11 @@ export default function CategoryView({
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalMode, setModalMode] = useState('create');
   const [selectedCategory, setSelectedCategory] = useState(null);
+  const [detailCategoryId, setDetailCategoryId] = useState(null);
+  const detailCategory = categories.find(cat => cat.id === detailCategoryId);
+  const detailNews = detailCategory
+    ? news.filter(item => item.categoryId === detailCategory.id)
+    : [];
 
   const [isConfirmOpen, setIsConfirmOpen] = useState(false);
   const [categoryToDelete, setCategoryToDelete] = useState(null);
@@ -173,7 +180,7 @@ export default function CategoryView({
                   <th style={{ minWidth: '320px' }}>Mô tả chi tiết</th>
                   <th style={{ width: '150px' }}>Số tin bài</th>
                   <th style={{ width: '130px' }}>Trạng thái</th>
-                  <th style={{ width: '110px' }} className="text-end pe-4">Thao tác</th>
+                  <th style={{ minWidth: '150px' }} className="text-end pe-4">Thao tác</th>
                 </tr>
               </thead>
               <tbody>
@@ -214,6 +221,15 @@ export default function CategoryView({
                         <div className="btn-group btn-group-sm">
                           <button
                             type="button"
+                            className="btn btn-outline-primary"
+                            onClick={() => setDetailCategoryId(cat.id)}
+                            title="Xem chi tiết danh mục"
+                            aria-label={`Xem chi tiết danh mục ${cat.name}`}
+                          >
+                            <Eye size={14} />
+                          </button>
+                          <button
+                            type="button"
                             className="btn btn-outline-secondary"
                             onClick={() => handleOpenEdit(cat)}
                             title="Chỉnh sửa danh mục"
@@ -238,6 +254,37 @@ export default function CategoryView({
           </div>
         )}
       </div>
+
+      {detailCategory && (
+        <DetailModal
+          title="Chi tiết danh mục"
+          subtitle={`Danh mục #${detailCategory.id}`}
+          onClose={() => setDetailCategoryId(null)}
+          fields={[
+            { label: 'ID', value: `#${detailCategory.id}` },
+            { label: 'Tên danh mục', value: detailCategory.name },
+            { label: 'Mô tả', value: <span style={{ whiteSpace: 'pre-wrap' }}>{detailCategory.description || '—'}</span> },
+            { label: 'Trạng thái', value: detailCategory.status === 1 ? 'Đang hoạt động' : 'Tạm ẩn' },
+            { label: 'Số bài viết', value: detailNews.length }
+          ]}
+        >
+          <section className="border-top pt-3 mt-3">
+            <h6 className="fw-bold">Bài viết thuộc danh mục</h6>
+            {detailNews.length > 0 ? (
+              <ul className="list-group list-group-flush">
+                {detailNews.map(item => (
+                  <li key={item.id} className="list-group-item px-0 text-break">
+                    <span className="text-secondary me-2">#{item.id}</span>
+                    {item.title}
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <p className="text-secondary mb-0">Chưa có bài viết thuộc danh mục này.</p>
+            )}
+          </section>
+        </DetailModal>
+      )}
 
       <CategoryModal
         isOpen={isModalOpen}

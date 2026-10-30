@@ -62,6 +62,34 @@ export const StorageService = {
   getUsers: loadUsers,
   saveUsers: (users) => saveToStorage(STORAGE_KEYS.USERS, users),
 
+  // Mock authentication uses the latest saved accounts, including CRUD changes.
+  authenticate: (username, password) => {
+    const account = loadUsers().find(user =>
+      user.username.toLowerCase() === username.trim().toLowerCase() &&
+      user.password === password.trim()
+    );
+
+    if (!account) {
+      return { user: null, error: 'Tên đăng nhập hoặc mật khẩu không chính xác!' };
+    }
+    if (account.status !== 1) {
+      return { user: null, error: 'Tài khoản đã bị khóa. Vui lòng liên hệ quản trị viên để kích hoạt.' };
+    }
+    if (account.role !== 1 && account.role !== 2) {
+      return { user: null, error: 'Vai trò tài khoản không hợp lệ. Vui lòng liên hệ quản trị viên.' };
+    }
+
+    return {
+      user: {
+        id: account.id,
+        username: account.username,
+        fullName: account.fullName,
+        role: account.role
+      },
+      error: null
+    };
+  },
+
   // Current session/auth
   getCurrentUser: () => {
     try {

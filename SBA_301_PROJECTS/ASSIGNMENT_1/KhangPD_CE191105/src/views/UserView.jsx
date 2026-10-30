@@ -4,6 +4,7 @@ import {
   UserPlus, 
   Search, 
   Edit, 
+  Eye,
   Trash2, 
   ShieldCheck, 
   Shield, 
@@ -14,6 +15,7 @@ import {
 import UserModal from '../components/forms/UserModal';
 import ConfirmDialog from '../components/common/ConfirmDialog';
 import EmptyState from '../components/common/EmptyState';
+import DetailModal from '../components/common/DetailModal';
 
 export default function UserView({
   users = [],
@@ -30,6 +32,8 @@ export default function UserView({
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalMode, setModalMode] = useState('create');
   const [selectedUser, setSelectedUser] = useState(null);
+  const [detailUserId, setDetailUserId] = useState(null);
+  const detailUser = users.find(item => item.id === detailUserId);
 
   const [isConfirmOpen, setIsConfirmOpen] = useState(false);
   const [userToDelete, setUserToDelete] = useState(null);
@@ -206,7 +210,7 @@ export default function UserView({
                   <th style={{ minWidth: '240px' }}>Email liên hệ</th>
                   <th style={{ width: '150px' }}>Vai trò (Role)</th>
                   <th style={{ width: '120px' }}>Trạng thái</th>
-                  <th style={{ width: '110px' }} className="text-end pe-4">Thao tác</th>
+                  <th style={{ minWidth: '150px' }} className="text-end pe-4">Thao tác</th>
                 </tr>
               </thead>
               <tbody>
@@ -269,6 +273,15 @@ export default function UserView({
                         <div className="btn-group btn-group-sm">
                           <button
                             type="button"
+                            className="btn btn-outline-primary"
+                            onClick={() => setDetailUserId(item.id)}
+                            title="Xem chi tiết tài khoản"
+                            aria-label={`Xem chi tiết tài khoản ${item.username}`}
+                          >
+                            <Eye size={14} />
+                          </button>
+                          <button
+                            type="button"
                             className="btn btn-outline-secondary"
                             onClick={() => handleOpenEdit(item)}
                             title="Chỉnh sửa tài khoản"
@@ -295,6 +308,23 @@ export default function UserView({
           </div>
         )}
       </div>
+
+      {detailUser && (
+        <DetailModal
+          title="Chi tiết tài khoản"
+          subtitle={`Tài khoản #${detailUser.id}`}
+          onClose={() => setDetailUserId(null)}
+          fields={[
+            { label: 'ID', value: `#${detailUser.id}` },
+            { label: 'Tên đăng nhập', value: detailUser.username },
+            { label: 'Họ và tên', value: detailUser.fullName },
+            { label: 'Email', value: detailUser.email },
+            { label: 'Vai trò', value: detailUser.role === 1 ? 'Admin (Quản trị viên)' : detailUser.role === 2 ? 'Staff (Biên tập viên)' : 'Không xác định' },
+            { label: 'Trạng thái', value: detailUser.status === 1 ? 'Đang hoạt động' : 'Đã khóa' },
+            { label: 'Ngày tạo', value: detailUser.createdAt }
+          ]}
+        />
+      )}
 
       <UserModal
         isOpen={isModalOpen}
