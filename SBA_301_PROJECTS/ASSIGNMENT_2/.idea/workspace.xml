@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="b90ed2d5-8c46-42ae-b875-95a6aaa5c9e3" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../ASSIGNMENT/KhangPD_CE191105/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASSIGNMENT/KhangPD_CE191105/.oxlintrc.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASSIGNMENT/KhangPD_CE191105/DEBUG_LOG.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASSIGNMENT/KhangPD_CE191105/INTERVIEW_PREP.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASSIGNMENT/KhangPD_CE191105/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASSIGNMENT/KhangPD_CE191105/TEST_MATRIX.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASSIGNMENT/KhangPD_CE191105/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASSIGNMENT/KhangPD_CE191105/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASSIGNMENT/KhangPD_CE191105/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASSIGNMENT/KhangPD_CE191105/public/favicon.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASSIGNMENT/KhangPD_CE191105/public/icons.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASSIGNMENT/KhangPD_CE191105/public/logo.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASSIGNMENT/KhangPD_CE191105/src/App.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASSIGNMENT/KhangPD_CE191105/src/App.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASSIGNMENT/KhangPD_CE191105/src/assets/hero.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASSIGNMENT/KhangPD_CE191105/src/assets/logo.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASSIGNMENT/KhangPD_CE191105/src/assets/react.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASSIGNMENT/KhangPD_CE191105/src/assets/vite.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASSIGNMENT/KhangPD_CE191105/src/components/common/ConfirmDialog.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASSIGNMENT/KhangPD_CE191105/src/components/common/EmptyState.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASSIGNMENT/KhangPD_CE191105/src/components/common/Modal.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASSIGNMENT/KhangPD_CE191105/src/components/common/Toast.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASSIGNMENT/KhangPD_CE191105/src/components/forms/CategoryModal.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASSIGNMENT/KhangPD_CE191105/src/components/forms/NewsModal.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASSIGNMENT/KhangPD_CE191105/src/components/forms/UserModal.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASSIGNMENT/KhangPD_CE191105/src/components/layout/AdminLayout.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASSIGNMENT/KhangPD_CE191105/src/components/layout/Header.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASSIGNMENT/KhangPD_CE191105/src/components/layout/Sidebar.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASSIGNMENT/KhangPD_CE191105/src/index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASSIGNMENT/KhangPD_CE191105/src/main.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASSIGNMENT/KhangPD_CE191105/src/services/initialData.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASSIGNMENT/KhangPD_CE191105/src/services/storageService.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASSIGNMENT/KhangPD_CE191105/src/styles/components.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASSIGNMENT/KhangPD_CE191105/src/styles/index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASSIGNMENT/KhangPD_CE191105/src/styles/layout.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASSIGNMENT/KhangPD_CE191105/src/styles/views.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASSIGNMENT/KhangPD_CE191105/src/views/CategoryView.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASSIGNMENT/KhangPD_CE191105/src/views/DashboardView.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASSIGNMENT/KhangPD_CE191105/src/views/LoginView.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASSIGNMENT/KhangPD_CE191105/src/views/NewsView.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASSIGNMENT/KhangPD_CE191105/src/views/SettingsView.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASSIGNMENT/KhangPD_CE191105/src/views/UserView.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASSIGNMENT/KhangPD_CE191105/vite.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Khang_BACKEND_PD_CE191105/src/test/java/vn/edu/fpt/FUNewsApiTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Khang_BACKEND_PD_CE191105/src/test/java/vn/edu/fpt/KhangBackendApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SBA_301_LAB4/chapter13orchid/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SBA_301_LAB4/chapter13orchid/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SBA_301_LAB4/chapter13orchid/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../SBA_301_LAB4/chapter13orchid/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SBA_301_LAB4/chapter13orchid/target/classes/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SBA_301_LAB4/chapter13orchid/target/classes/fu/se/chapter13orchid/Chapter13orchidApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SBA_301_LAB4/chapter13orchid/target/classes/fu/se/chapter13orchid/controllers/OrchidController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SBA_301_LAB4/chapter13orchid/target/classes/fu/se/chapter13orchid/pojos/Orchid.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SBA_301_LAB4/chapter13orchid/target/classes/fu/se/chapter13orchid/repositories/IOrchidRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SBA_301_LAB4/chapter13orchid/target/classes/fu/se/chapter13orchid/services/IOrchidService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SBA_301_LAB4/chapter13orchid/target/classes/fu/se/chapter13orchid/services/OrchidService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SBA_301_LAB4/chapter13orchid/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SBA_301_LAB4/chapter13orchid/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SBA_301_LAB4/chapter13orchid/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SBA_301_LAB4/chapter13orchid/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SBA_301_LAB4/chapter13orchid/target/surefire-reports/2026-10-12T10-56-30_744.dumpstream" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SBA_301_LAB4/chapter13orchid/target/surefire-reports/TEST-fu.se.chapter13orchid.Chapter13orchidApplicationTests.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SBA_301_LAB4/chapter13orchid/target/surefire-reports/fu.se.chapter13orchid.Chapter13orchidApplicationTests.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SBA_301_LAB4/chapter13orchid/target/test-classes/fu/se/chapter13orchid/Chapter13orchidApplicationTests.class" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="EmbeddingIndexingInfo">
+    <option name="cachedIndexableFilesCount" value="62" />
+    <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;khangpd15&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/khangpd15/SBA_TASK_LAB.git&quot;,
+    &quot;accountId&quot;: &quot;63723118-b164-437c-b158-82702c5cb3f1&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
+  <component name="ProjectId" id="3LOeGBh0P1bJq3v4dZUXh3JKlOv" />
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "Spring Boot.KhangBackendApplication.executor": "Run",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "git-widget-placeholder": "main",
+    "junie.onboarding.icon.badge.shown": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/SBA301_FPT_PROJECTS/SBA_301_PROJECTS/ASSIGNMENT_2",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "com.poratu.idea.plugins.tomcat.setting.TomcatServersConfigurable",
+    "to.speed.mode.migration.done": "true",
+    "ts.external.directory.path": "D:\\DEV\\IDE\\JetBrains\\IntelliJ IDEA 2025.3\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="ASSIGNMENT_2" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="ASSIGNMENT_1" />
+      <option name="filePath" />
+      <method v="2" />
+    </configuration>
+    <configuration name="KhangBackendApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="Khang_BACKEND_PD_CE191105" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="vn.edu.fpt.KhangBackendApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-cffe25b9f5b3-intellij.indexing.shared.core-IU-253.28294.334" />
+        <option value="bundled-js-predefined-d6986cc7102b-c7e53b3be11b-JavaScript-IU-253.28294.334" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b90ed2d5-8c46-42ae-b875-95a6aaa5c9e3" name="Changes" comment="" />
+      <created>1793329443910</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1793329443910</updated>
+      <workItem from="1793329445152" duration="13122000" />
+      <workItem from="1793512132106" duration="2870000" />
+      <workItem from="1793587156995" duration="4802000" />
+      <workItem from="1793674228922" duration="4998000" />
+      <workItem from="1793752124087" duration="2210000" />
+      <workItem from="1793872405780" duration="128000" />
+      <workItem from="1793872565546" duration="247000" />
+      <workItem from="1793872859009" duration="5579000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

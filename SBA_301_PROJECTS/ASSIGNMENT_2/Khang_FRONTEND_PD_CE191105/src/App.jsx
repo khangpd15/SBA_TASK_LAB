@@ -22,7 +22,14 @@ export default function App() {
   const [currentUser, setCurrentUser] = useState(() => {
     try {
       const saved = localStorage.getItem('funews_user');
-      return saved ? JSON.parse(saved) : null;
+      if (!saved) return null;
+      const parsed = JSON.parse(saved);
+      // Xóa phiên làm việc cũ không tương thích (từ Assignment 01)
+      if (parsed && (!parsed.accountID && !parsed.accountEmail)) {
+        localStorage.removeItem('funews_user');
+        return null;
+      }
+      return parsed;
     } catch {
       return null;
     }
@@ -82,23 +89,23 @@ export default function App() {
     try {
       setIsLoading(true);
       const [catList, newsList, tagList] = await Promise.all([
-        api.category.getAll().catch(() => []),
-        api.news.getAll().catch(() => []),
-        api.tag.getAll().catch(() => [])
+        api.category.getAll(),
+        api.news.getAll(),
+        api.tag.getAll()
       ]);
-      setCategories(catList);
-      setNews(newsList);
-      setTags(tagList);
+      setCategories(catList || []);
+      setNews(newsList || []);
+      setTags(tagList || []);
 
       // Admin role (1) fetches all accounts
       const role = currentUser?.accountRole !== undefined ? currentUser.accountRole : currentUser?.role;
-      if (role === 1) {
-        const userList = await api.account.getAll().catch(() => []);
-        setUsers(userList);
+      if (role === 1 || role === '1') {
+        const userList = await api.account.getAll();
+        setUsers(userList || []);
       }
     } catch (err) {
       console.error("Lỗi khi tải dữ liệu từ Backend API:", err);
-      showToast("Không thể kết nối đến Backend Spring Boot (port 8080)!", "error");
+      showToast(getErrorMessage(err, "Không thể kết nối đến Backend Spring Boot (port 8080)!"), "error");
     } finally {
       setIsLoading(false);
     }
@@ -109,14 +116,14 @@ export default function App() {
     try {
       setIsLoading(true);
       const [activeNews, activeCats] = await Promise.all([
-        api.news.getActive().catch(() => []),
-        api.category.getActive().catch(() => [])
+        api.news.getActive(),
+        api.category.getActive()
       ]);
-      setNews(activeNews);
-      setCategories(activeCats);
+      setNews(activeNews || []);
+      setCategories(activeCats || []);
     } catch (err) {
       console.error("Lỗi tải tin tức công khai:", err);
-      showToast("Không thể tải tin tức công khai từ Backend!", "error");
+      showToast(getErrorMessage(err, "Không thể tải tin tức công khai từ Backend!"), "error");
     } finally {
       setIsLoading(false);
     }
